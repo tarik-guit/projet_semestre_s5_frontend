@@ -1,0 +1,42 @@
+.bgcolor1{
+
+  background-color: #2682C4;
+}
+.bgcolor2{
+
+  background-color: #D6D6F6;
+}
+
+.font1{
+
+  font-size:60px;
+}
+.font2{
+
+  font-size:45px;
+}
+.textcolor1{
+  color:#CACAE2;
+}
+.margeleft1{
+
+  margin-left:500px;
+}
+.margeleft2{
+
+  margin-left:100px;
+}
+
+li>a:hover{
+  color:black;
+  background-color: white;
+
+}
+.color1{
+  color:white;
+}
+
+.margeright1{
+ margin-right: 200px;
+
+}
