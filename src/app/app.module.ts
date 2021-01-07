@@ -4,11 +4,17 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChoixComponent } from './choix/choix.component';
+import { GrapheComponent } from './graphe/graphe.component';
+import { PredictionComponent } from './prediction/prediction.component';
+import { AideComponent } from './aide/aide.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChoixComponent
+    ChoixComponent,
+    GrapheComponent,
+    PredictionComponent,
+    AideComponent
   ],
   imports: [
     BrowserModule,
