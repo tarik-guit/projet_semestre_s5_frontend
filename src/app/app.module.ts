@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ChoixComponent } from './choix/choix.component';
 import { GrapheComponent } from './graphe/graphe.component';
 import { PredictionComponent } from './prediction/prediction.component';
-import { AideComponent } from './aide/aide.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { AideComponent } from './aide/aide.component';
     ChoixComponent,
     GrapheComponent,
     PredictionComponent,
-    AideComponent
+
   ],
   imports: [
     BrowserModule,
