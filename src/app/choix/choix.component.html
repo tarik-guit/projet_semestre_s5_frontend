@@ -210,7 +210,7 @@
       </div>
       <!--liste patient au dessus-->
       <!-- creer patient-->
-      <div class="card-body  "  *ngIf="l_patients==false && noneditpatient==true">
+      <div class="card-body  "  *ngIf="l_patients==false && noneditpatient==true && editdataperso ==false && ajoutdataperso==false">
         <h4 class="text-danger" *ngIf="currenthopital.id==null">Pas d'hopital choisi</h4>
 
         <div class="text-light font-weight-bold card-header">Ajouter un patient pour l'hopital de id:<h5 class="d-inline text-info" >  {{currenthopital.id}}  {{currenthopital.nom}}</h5></div>
@@ -248,7 +248,8 @@
       </div>
       <!-- crrer patient au dessus-->
       <!-- modifier patient-->
-      <div class="card-body  "  *ngIf=" editpatient==true && noneditpatient==false">
+
+      <div class="card-body  "  *ngIf=" editpatient==true && noneditpatient==false && editdataperso==false   " >
         <div class="text-light font-weight-bold card-header">modifier patient de id: <h5 class="d-inline text-info">{{patient.id}} <h5 class="d-inline text-light">Mr: </h5>{{patient.nom}} {{patient.prenom}}</h5></div>
         <form class="form mt-5">
           <div class="form-group">
@@ -285,7 +286,7 @@
       <!-- modifier patient au dessus-->
       <!--ajout data perso-->
 
-      <div class="card-body  "  *ngIf=" ajoutdataperso==true">
+      <div class="card-body  "  *ngIf=" ajoutdataperso==true  ">
         <div class="text-light font-weight-bold card-header">Ajouter data-perso pour patient de id: <h5 class="d-inline text-info">{{patient.id}} <h5 class="d-inline text-light">Mr: </h5>{{patient.nom}} {{patient.prenom}}</h5></div>
         <form class="form mt-5">
           <div class="form-group">
@@ -314,7 +315,7 @@
       <!--ajout data perso au dessus-->
       <!--liste des data personnellees pour un patient donné-->
 
-      <div class="card-body table table-dark "  *ngIf="editdataperso==true ">
+      <div class="card-body table table-dark "  *ngIf="editdataperso==true && editpatient==false ">
         <div class="text-light font-weight-bold card-header mb-5">Liste des data personnelle pour patient de  id:<h5 class="d-inline text-info">  {{patient.id}} Mr: {{patient.nom}} {{patient.prenom}}</h5></div>
         <tr>
           <th>Id</th>

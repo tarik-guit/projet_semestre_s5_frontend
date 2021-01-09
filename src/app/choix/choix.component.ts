@@ -12,6 +12,7 @@ import { dataperso } from '../../models/dataperso';
   styleUrls: ['./choix.component.css']
 })
 export class ChoixComponent implements OnInit {
+
    afficheralertecreation:boolean=false;
   l_hopitaux: boolean = true;
   l_patients: boolean = false;
@@ -60,6 +61,7 @@ export class ChoixComponent implements OnInit {
     this.l_patients = false;
     this.editdataperso=false;
     this.ajoutdataperso=false;
+
   }
 
   p_liste() {
@@ -68,9 +70,10 @@ export class ChoixComponent implements OnInit {
     this.editdataperso=false;
     this.ajoutdataperso=false;
     this.afficheralertecreation=false;
+
     this.getpatientforcurrenthopital(this.currenthopital);
   }
-  editerpatient(p){this.editpatient=true;this.patient=p;this.l_patients=false,this.noneditpatient=false}
+  editerpatient(p){this.editpatient=true;this.patient=p;this.l_patients=false,this.noneditpatient=false;}
   gethopitauxcurruser(){this.choixserv.gethopitauxpourcurrentuser().subscribe(data=>{this.hopitauxcurr=data,this.listehopitaux=data})}
   creerhopital(c){this.choixserv.creerhopital(c).subscribe(data=>{this.resultatcreationhopital=data});this.afficheralertecreation=true;}
   choisirhopital(p){this.currenthopital=p;this.choixserv.currenthopital=p;this.getpatientforcurrenthopital(p)}
@@ -81,7 +84,7 @@ export class ChoixComponent implements OnInit {
   supprimerpatient(p){if(window.confirm("voulez vous vraiment supprimer cet patient")){this.choixserv.supprimerpatient(p.id);this.pageofpatients.splice(this.pageofpatients.indexOf(p),1);if(p==this.currentpatient){this.currentpatient=[];this.choixserv.currentpatient=[]}}}
   modifierpatient(p){this.choixserv.modifierpatient(p.id,p);this.noneditpatient=true;this.l_patients=true}
   getdataperso(p){this.choixserv.getdatapersonnelle(p).subscribe(data=>{this.dataspersonnelle=data;})}
-  editdatapersonelle(p){this.patient=p;this.editdataperso=true;this.l_patients=false;this.getdataperso(p);this.noneditpatient=false;}
+  editdatapersonelle(p){this.editpatient=false;this.patient=p;this.editdataperso=true;this.l_patients=false;this.getdataperso(p);this.noneditpatient=true;}
 
   creerdatapers(c){this.choixserv.creerdataperso(this.patient.id,c).subscribe(data=>{this.resultatcreationdataperso=data;this.pageofdataper.push(data)});/*this.ajoutdataperso=false;this.editdataperso=true;*/this.afficheralertecreation=true;}
   ajoutdatapers(){this.ajoutdataperso=true;this.editdataperso=false}
