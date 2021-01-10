@@ -86,7 +86,7 @@ export class ChoixComponent implements OnInit {
   getdataperso(p){this.choixserv.getdatapersonnelle(p).subscribe(data=>{this.dataspersonnelle=data;})}
   editdatapersonelle(p){this.editpatient=false;this.patient=p;this.editdataperso=true;this.l_patients=false;this.getdataperso(p);this.noneditpatient=true;}
 
-  creerdatapers(c){this.choixserv.creerdataperso(this.patient.id,c).subscribe(data=>{this.resultatcreationdataperso=data;this.pageofdataper.push(data)});/*this.ajoutdataperso=false;this.editdataperso=true;*/this.afficheralertecreation=true;}
+  creerdatapers(c){this.choixserv.creerdataperso(this.patient.id,c).subscribe(data=>{this.resultatcreationdataperso=data;this.dataspersonnelle.push(data)});this.afficheralertecreation=true;}
   ajoutdatapers(){this.ajoutdataperso=true;this.editdataperso=false}
   retour1(){this.ajoutdataperso=false;this.editdataperso=true;this.afficheralertecreation=false; }
   supprimerdataperso(p){if(window.confirm("voulez vous vraiment supprimer cet donnée")){this.choixserv.supprimerdataperso(p);this.pageofdataper.splice(this.pageofdataper.indexOf(p),1)}}
